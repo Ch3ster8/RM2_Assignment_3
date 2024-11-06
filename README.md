@@ -12,4 +12,4 @@
 <a name="Development-Process"></a>
 # Development Process
    * ### Planning
-      * F
+      * To start off my planning I decided to research the best way to manipulate motors in order to control them how I needed to.
