@@ -1,0 +1,254 @@
+const int forward_button = 8;
+const int backward_button = 9;
+const int left_button = 10;
+const int right_button = 11;
+const int go_button = 12;
+const int clear_button = 13;
+// This button is on A0 simply to fit on the arduino no other reason
+const int pause_button = A0;
+
+//Ultrasonic pins on analog pins simply to fit on the arduino
+const int ultrasonic_echo = A3;
+const int ultrasonic_trigger = A2;
+//Defining variables for ultrasonic sensor
+long duration;
+int distance;
+
+// L293D's
+const int motor_pin_1 = 2;  // Inp 1- Motor 1
+const int motor_pin_2 = 3;  // Inp 2- Motor 1 
+const int motor_pin_3 = 4;  // Inp 3- Motor 2
+const int motor_pin_4 = 5;  // Inp 4- Motor 2
+const int enable_pin_1 = 6; // Enable 1- Motor 1
+const int enable_pin_2 = 7; // Enable 2- Motor 2
+
+// Buzzer pin is an analog pin for varying sound
+const int buzzer_pin = A1;
+
+const int Max_Commands = 30;  // Max ammount of commands allowed at one time
+
+// Declare the Movement enum globally
+enum Movement { FORWARD, BACKWARD, LEFT, RIGHT, PAUSE };
+Movement CommandArray[Max_Commands];  // CommandArray for holding movement commands
+int Command_Index = 0;  // Keeps the current index of the array
+
+// Function to resolve 'not declared' errors
+void AddCommand(Movement Command);   
+void ClearCommands();                
+void ExecuteCommands();             
+void MoveForward();                 
+void MoveBackward();
+void TurnLeft();
+void TurnRight();
+void EnableMotors();
+void DisableMotors();
+void Buzz(int times = 1); 
+void Distance();
+
+// Setup function
+void setup() {
+  // Reference to https://projecthub.arduino.cc/Isaac100/getting-started-with-the-hc-sr04-ultrasonic-sensor-7cabe1
+  pinMode(ultrasonic_trigger, OUTPUT); // Sets the trigPin as an Output
+  pinMode(ultrasonic_echo, INPUT); // Sets the echoPin as an Input
+  Serial.begin(9600); // Starts the serial communication
+  
+  // Setup motor pins as outputs
+  pinMode(motor_pin_1, OUTPUT);
+  pinMode(motor_pin_2, OUTPUT);
+  pinMode(motor_pin_3, OUTPUT);
+  pinMode(motor_pin_4, OUTPUT);
+  pinMode(enable_pin_1, OUTPUT);
+  pinMode(enable_pin_2, OUTPUT);
+
+  // Setup button pins as inputs with the pullup resistors
+  pinMode(forward_button, INPUT_PULLUP);
+  pinMode(backward_button, INPUT_PULLUP);
+  pinMode(left_button, INPUT_PULLUP);
+  pinMode(right_button, INPUT_PULLUP);
+  pinMode(go_button, INPUT_PULLUP);
+  pinMode(clear_button, INPUT_PULLUP);
+  pinMode(pause_button, INPUT_PULLUP);
+
+  // Setup buzzer pin as output
+  pinMode(buzzer_pin, OUTPUT);
+
+  // Sets the motors to be off by default
+  digitalWrite(enable_pin_1, LOW);
+  digitalWrite(enable_pin_2, LOW);
+}
+
+// Checks which button is pressed and adds the corresponding command to the array
+void loop() {
+  if (digitalRead(forward_button) == LOW) {
+	AddCommand(FORWARD);
+	Buzz();
+	delay(300);  
+  }
+  
+  else if (digitalRead(backward_button) == LOW) {
+	AddCommand(BACKWARD);
+	Buzz();
+	delay(300);
+  }
+  
+  else if (digitalRead(left_button) == LOW) {
+	AddCommand(LEFT);
+	Buzz();
+	delay(300);
+  }
+  
+  else if (digitalRead(right_button) == LOW) {
+	AddCommand(RIGHT);
+	Buzz();
+	delay(300);
+  }
+
+  else if (digitalRead(pause_button) == LOW) {
+	AddCommand(PAUSE);
+	Buzz();
+	delay(300);
+  }
+
+  else if (digitalRead(clear_button) == LOW) {
+	ClearCommands();
+	Buzz();
+	delay(300);
+  }
+  // Executes the commands if there is commands to execute
+  else if (digitalRead(go_button) == LOW && Command_Index > 0) {
+	// Buzz's three times
+	Buzz(3);
+	ExecuteCommands();
+	ClearCommands();  // Clear commands after execution
+  }
+}
+
+// Reference to https://projecthub.arduino.cc/Isaac100/getting-started-with-the-hc-sr04-ultrasonic-sensor-7cabe1
+void Distance(){
+  digitalWrite(ultrasonic_trigger, LOW);
+  delayMicroseconds(2);
+  digitalWrite(ultrasonic_trigger, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(ultrasonic_trigger, LOW);
+  
+  duration = pulseIn(ultrasonic_echo, HIGH);
+
+  // Calculating the distance
+  distance = (duration*.0343)/2;
+  // Prints the distance on the Serial Monitor
+  Serial.print("Distance: ");
+  Serial.println(distance);
+  delay(100);
+}
+
+// Adds a command to the array based of the command_index
+void AddCommand(Movement Command) {
+  if (Command_Index < Max_Commands) {
+    CommandArray[Command_Index] = Command;
+    Command_Index++;
+  }
+}
+
+// Clears the commands by reseting the command index forcing the current array to be overidden
+void ClearCommands() {
+  Command_Index = 0;  // Reset command index
+}
+
+// Loops through each commands and executes them based off the array
+void ExecuteCommands() {
+  for (int i = 0; i < Command_Index; i++) {
+	Distance();
+	if (distance < 16) {
+		ClearCommands();
+		break;
+	}
+	if (Command_Index > 0) {
+		switch (CommandArray[i]) {
+		  case FORWARD:
+			MoveForwards();
+			break;
+		  case BACKWARD:
+			MoveBackwards();
+			break;
+		  case LEFT:
+			TurnLeft();
+			break;
+		  case RIGHT:
+			TurnRight();
+			break;
+		  case PAUSE:
+			delay(1000);  // Wait for 1 second
+			break;
+		}
+    }
+    delay(500);  // 0.5 second delay between commands
+  }
+}
+
+// Functions to move the vehicle with motors:
+
+//Move Forwards
+void MoveForwards() {
+  digitalWrite(motor_pin_1, HIGH);
+  digitalWrite(motor_pin_2, LOW);
+  digitalWrite(motor_pin_3, HIGH);
+  digitalWrite(motor_pin_4, LOW);
+  EnableMotors();
+  delay(1000);  // Move for 1 second
+  DisableMotors();
+}
+
+// Move Backwards
+void MoveBackwards() {
+  digitalWrite(motor_pin_1, LOW);
+  digitalWrite(motor_pin_2, HIGH);
+  digitalWrite(motor_pin_3, LOW);
+  digitalWrite(motor_pin_4, HIGH);
+  EnableMotors();
+  delay(1000); // Move for 1 second
+  DisableMotors();
+}
+
+// Turns Left
+void TurnLeft() {
+  digitalWrite(motor_pin_1, LOW);
+  digitalWrite(motor_pin_2, HIGH);
+  digitalWrite(motor_pin_3, HIGH);
+  digitalWrite(motor_pin_4, LOW);
+  EnableMotors();
+  delay(500);  // Turn for 0.5 seconds
+  DisableMotors();
+}
+
+// Turns Right
+void TurnRight() {
+  digitalWrite(motor_pin_1, HIGH);
+  digitalWrite(motor_pin_2, LOW);
+  digitalWrite(motor_pin_3, LOW);
+  digitalWrite(motor_pin_4, HIGH);
+  EnableMotors();
+  delay(500); // Turn for 0.5 seconds
+  DisableMotors();
+}
+
+// Turns on the motors
+void EnableMotors() {
+  digitalWrite(enable_pin_1, HIGH);
+  digitalWrite(enable_pin_2, HIGH);
+}
+
+// Turns off the motors
+void DisableMotors() {
+  digitalWrite(enable_pin_1, LOW);
+  digitalWrite(enable_pin_2, LOW);
+}
+
+// Sounds the buzzer an ammount of times for 0.5 seconds each
+void Buzz(int times) {
+  for (int i = 0; i < times; i++) {
+    digitalWrite(buzzer_pin, HIGH);
+    delay(500);
+    digitalWrite(buzzer_pin, LOW);
+    delay(100);
+  }
+}
