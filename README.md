@@ -18,7 +18,7 @@
     
       * Other than circuitry I also have to think about the chassis that the components will sit on, for this, I was thinking of a flat ply-wood plate with little holes to put tabs that I could drill into the hole that is on the hobby motors,
     
-      * **Talk about all the 7 functions**
+      * **Talk about all the 7 functions** I plan to have 7 buttons, FORWARD, BACKWARDS, LEFT, RIGHT, CLEAR, PAUSE, GO, each movement command will get saved into an array with a max of about 30 commands, then when GO is pressed it will run each command in sequence performing each action after the other with a little wait in between actions, there will also be a beep when a button is pressed and 3 beeps for when the GO button is pressed if it has movement commands to execute, the CLEAR button will clear all saved movement commands from the array, and finally the PAUSE button will halt the NotBeeBot and wait till GO is pressed again to continue the rest of the sequence.
     
       * **Talk about using the marble ball instead of the rubber wheel**
     
