@@ -22,7 +22,6 @@
     
       * **Talk about using the marble ball instead of the rubber wheel**
     
-      * 
       * <a href="url"><img src="https://github.com/user-attachments/assets/22073cc8-5af2-40f5-afa6-304a6105c8e5" align="right" height="240" width="427" ></a>
       * <a href="url"><img src="https://github.com/user-attachments/assets/6852a675-cffc-4f1b-b18f-1a17f53fcc83" align="right" height="240" width="427" ></a>
       * <a href="url"><img src="https://github.com/user-attachments/assets/88073326-d4c1-4e19-8b52-755fb7bbe581" align="right" height="240" width="427" ></a>
