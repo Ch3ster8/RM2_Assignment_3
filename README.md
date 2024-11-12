@@ -12,7 +12,7 @@
 <a name="Development-Process"></a>
 # Development Process
    * ### Planning
-      * To start off my planning I decided to research the best way to manipulate motors in order to control them how I needed to and I found that the H-Bridge Motor Driver was the best suited to controlling the motors in the way I needed to, it allows me to change speed and direction of the motors with simple lines of code.
+      * <a href="url"><img src="https://github.com/user-attachments/assets/c41ade3a-30f2-4565-9ba1-e61625415ecc" align="right" height="240" width="427" ></a> To start off my planning I decided to research the best way to manipulate motors in order to control them how I needed to and I found that the H-Bridge Motor Driver was the best suited to controlling the motors in the way I needed to, it allows me to change speed and direction of the motors with simple lines of code.
     
       * I made the entire circuit in [Tinkercad](https://www.tinkercad.com/things/fkpYd7mgALy-not-beebot-camerons/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=hNEtSJ4X27Qa3pH9DLSsrnlikMR4CaXaWMVf1GFJPlw) before fiddling with wires in real life. This was so that I could remove any potential for a broken component to break the circuit, seeing as tinkercad is a programmed simulation of what would really happen, there aren't broken components and I can ensure that the reason my circuit might not work is because of how I have wired it and not a broken component.
     
@@ -22,7 +22,7 @@
     
       * **Talk about using the marble ball instead of the rubber wheel**
     
-      * <a href="url"><img src="https://github.com/user-attachments/assets/c41ade3a-30f2-4565-9ba1-e61625415ecc" align="right" height="240" width="427" ></a>
+      * 
       * <a href="url"><img src="https://github.com/user-attachments/assets/22073cc8-5af2-40f5-afa6-304a6105c8e5" align="right" height="240" width="427" ></a>
       * <a href="url"><img src="https://github.com/user-attachments/assets/6852a675-cffc-4f1b-b18f-1a17f53fcc83" align="right" height="240" width="427" ></a>
       * <a href="url"><img src="https://github.com/user-attachments/assets/88073326-d4c1-4e19-8b52-755fb7bbe581" align="right" height="240" width="427" ></a>
