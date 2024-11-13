@@ -34,15 +34,15 @@
 
 <a name="Circuit/Wiring-Diagrams"></a>
 # Circuit/Wiring Diagrams
-   * <a href="url"><img src="https://github.com/user-attachments/assets/6852a675-cffc-4f1b-b18f-1a17f53fcc83" align="right" height="240" width="427" ></a>
-   * <a href="url"><img src="https://github.com/user-attachments/assets/88073326-d4c1-4e19-8b52-755fb7bbe581" align="right" height="240" width="427" ></a>
+   * <a href="url"><img src="https://github.com/user-attachments/assets/6852a675-cffc-4f1b-b18f-1a17f53fcc83" align="right" height="240" width="427" ></p>
+   * <a href="url"><img src="https://github.com/user-attachments/assets/88073326-d4c1-4e19-8b52-755fb7bbe581" align="right" height="240" width="427" ></p>
 
 
 
 
 
 
-   
+   * .
 
 # References
    * https://projecthub.arduino.cc/Isaac100/getting-started-with-the-hc-sr04-ultrasonic-sensor-7cabe1
