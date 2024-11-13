@@ -4,11 +4,9 @@ const int left_button = 10;
 const int right_button = 11;
 const int go_button = 12;
 const int clear_button = 13;
-// This button is on A0 simply to fit on the arduino no other reason
-const int pause_button = A0;
 
 //Ultrasonic pins on analog pins simply to fit on the arduino
-const int ultrasonic_echo = A3;
+const int ultrasonic_echo = A1;
 const int ultrasonic_trigger = A2;
 //Defining variables for ultrasonic sensor
 long duration;
@@ -23,7 +21,7 @@ const int enable_pin_1 = 6; // Enable 1- Motor 1
 const int enable_pin_2 = 7; // Enable 2- Motor 2
 
 // Buzzer pin is an analog pin for varying sound
-const int buzzer_pin = A1;
+const int buzzer_pin = A0;
 
 const int Max_Commands = 30;  // Max ammount of commands allowed at one time
 
@@ -67,7 +65,6 @@ void setup() {
   pinMode(right_button, INPUT_PULLUP);
   pinMode(go_button, INPUT_PULLUP);
   pinMode(clear_button, INPUT_PULLUP);
-  pinMode(pause_button, INPUT_PULLUP);
 
   // Setup buzzer pin as output
   pinMode(buzzer_pin, OUTPUT);
@@ -102,13 +99,6 @@ void loop() {
 	Buzz();
 	delay(300);
   }
-
-  else if (digitalRead(pause_button) == LOW) {
-	AddCommand(PAUSE);
-	Buzz();
-	delay(300);
-  }
-
   else if (digitalRead(clear_button) == LOW) {
 	ClearCommands();
 	Buzz();
@@ -158,6 +148,7 @@ void ClearCommands() {
 void ExecuteCommands() {
   for (int i = 0; i < Command_Index; i++) {
 	Distance();
+	//Stops the NotBeeBot if it's within 15cm of an obstacle
 	if (distance < 16) {
 		ClearCommands();
 		break;
