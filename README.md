@@ -22,7 +22,8 @@
     
       * Looking at both the rubber wheel and the marble ball as what I can use to hold my NotBeeBot up I decided that the marble ball would be the best option, my reasoning is that the rubber ball can pivot which way it's rolling on the fly and has little to no friction, whereas the rubber wheel has to take time to pivot which way its rolling and depending on the direction that it's facing it could cause a lot of friction and actually change how much the NotBeeBot rotates causing the path the bot takes to be way off.
     
-      *  | Name | Quantity | Component |
+      * Component List:
+         | Name | Quantity | Component |
          | :---:       |  :----:     |     :----:    |
          | U2 | 1 | H-Bridge Motor Driver |
          | M1 & M2 | 2 | Hobby Gearmotor |
@@ -34,7 +35,9 @@
       
     
    * ### Implementation
-      * When writing the code for the NotBeeBot I ran into an issue when trying to implement the pause function, due to the Arduino's limitations when I was executing the saved commands in sequence it would wait for all the commands to end before allowing the loop function to run again, this meant that whilst the movement commands were running I couldn't check if any buttons were pressed, and trying to put the checks inside of the movement functions only allowed it to check after each delay in which I would move forward for 750ms so every 750ms it would only check once, the only way to solve this issue would be to use multithreading to allow both the loop function and the movement function to execute simultaneously, however, this task proved too difficult for me to even begin so I decided to completely wipe the pause function from the project.
+      * When writing the [Code](NotBeeBotCode.txt) for the NotBeeBot I ran into an issue when trying to implement the pause function, due to the Arduino's limitations when I was executing the saved commands in sequence it would wait for all the commands to end before allowing the loop function to run again, this meant that whilst the movement commands were running I couldn't check if any buttons were pressed, and trying to put the checks inside of the movement functions only allowed it to check after each delay in which I would move forward for 750ms so every 750ms it would only check once, the only way to solve this issue would be to use multithreading to allow both the loop function and the movement function to execute simultaneously, however, this task proved too difficult for me to even begin so I decided to completely wipe the pause function from the project.
+    
+      * 
         
    * ### Testing and Evaluation
       * Here is a [Video](https://drive.google.com/file/d/1NErJ5e0zdEoMrJxAojWGWbAEdsFXxoad/view?usp=sharing) showing the controls getting stored inside 
@@ -52,6 +55,11 @@
 
 # References
    * https://projecthub.arduino.cc/Isaac100/getting-started-with-the-hc-sr04-ultrasonic-sensor-7cabe1
+
+   * ### All Links:
+   * [Code](NotBeeBotCode.txt)
+   * [Tinkercad](https://www.tinkercad.com/things/fkpYd7mgALy-not-beebot-camerons/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=hNEtSJ4X27Qa3pH9DLSsrnlikMR4CaXaWMVf1GFJPlw)
+   * [Video-1](https://drive.google.com/file/d/1NErJ5e0zdEoMrJxAojWGWbAEdsFXxoad/view?usp=sharing)
 
 
 
