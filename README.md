@@ -29,7 +29,7 @@
       * When writing the code for the NotBeeBot I ran into an issue when trying to implement the pause function, due to the aduino's limitations when I was executing the saved commands in sequence it would wait for all the commands to end before allowing the loop function to run again, this meant that whilst the movement commands were running I couldnt check if any buttons were pressed, and trying to put the checks inside of the movement functions only allowed it to check after each delay in which I would move forward for 750ms so every 750ms it would only check once, the only way to solve this issue would be to use multithreading to allow both the loop function and the movement function to execute simultainously, however this task proved too difficult for me to even begin so I decided to completely wipe the pause function from the project.
         
    * ### Testing and Evaluation
-      * 
+      * When testing my robot I found that a lot of the testing I was going to do would be adjusting the timing for the motors to run allowing for that 15cm measurement and as close to 90 degree turns as I can possibly achieve, however this came with an issue to do with battery life, as I used the robot more and more the battery drained 
 
    * ### Iteration
 
