@@ -29,9 +29,8 @@
          | U3 | 1 | Arduino Uno R3 |
          | Bat1 | 1 | 4 Batteries, AA, yes 1.5V Battery |
          | PIEZO1 | 1 | Piezo |
-         | S8 & S9 & S10 & S11 & S12 & S14 | 6 | Pushbutton |
+         | S8 & S9 & S10 & S11 & S12 & S14  | 6 | Pushbutton |
          | DIST1 | 1 | Ultrasonic Distance Sensor (4-pin) |
-      * <a href="url"><img src="https://github.com/user-attachments/assets/22073cc8-5af2-40f5-afa6-304a6105c8e5" align="right" height="240" width="427" ></a>
       
     
    * ### Implementation
