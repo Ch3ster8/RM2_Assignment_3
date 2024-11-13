@@ -22,6 +22,10 @@
     
       * Looking at both the rubber wheel and the marble ball as what I can use to hold my NotBeeBot up I decided that the marble ball would be the best option, my reasoning is that the rubber ball can pivot which way it's rolling on the fly and has little to no friction, whereas the rubber wheel has to take time to pivot which way its rolling and depending on the direction that it's facing it could cause a lot of friction and actually change how much the NotBeeBot rotates causing the path the bot takes to be way off.
     
+      *  | Name | Quantity | Component |
+         | :---:       |  :----:     |     :----:    |     :----:    |
+         | U2 | 1 | H-Bridge Motor Driver |
+         | M1 M2 | 2 | Hobby Gearmotor |
       * <a href="url"><img src="https://github.com/user-attachments/assets/22073cc8-5af2-40f5-afa6-304a6105c8e5" align="right" height="240" width="427" ></a>
       
     
