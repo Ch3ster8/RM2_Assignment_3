@@ -23,14 +23,26 @@
       * **Talk about using the marble ball instead of the rubber wheel**
     
       * <a href="url"><img src="https://github.com/user-attachments/assets/22073cc8-5af2-40f5-afa6-304a6105c8e5" align="right" height="240" width="427" ></a>
-      * <a href="url"><img src="https://github.com/user-attachments/assets/6852a675-cffc-4f1b-b18f-1a17f53fcc83" align="right" height="240" width="427" ></a>
-      * <a href="url"><img src="https://github.com/user-attachments/assets/88073326-d4c1-4e19-8b52-755fb7bbe581" align="right" height="240" width="427" ></a>
+      
     
    * ### Implementation
       * When writing the code for the NotBeeBot I ran into an issue when trying to implement the pause function, due to the aduino's limitations when I was executing the saved commands in sequence it would wait for all the commands to end before allowing the loop function to run again, this meant that whilst the movement commands were running I couldnt check if any buttons were pressed, and trying to put the checks inside of the movement functions only allowed it to check after each delay in which I would move forward for 750ms so every 750ms it would only check once, the only way to solve this issue would be to use multithreading to allow both the loop function and the movement function to execute simultainously, however this task proved too difficult for me to even begin so I decided to completely wipe the pause function from the project.
    * ### Testing and Evaluation
 
    * ### Iteration
+
+
+<a name="Circuit/Wiring-Diagrams"></a>
+# Circuit/Wiring Diagrams
+   * <a href="url"><img src="https://github.com/user-attachments/assets/6852a675-cffc-4f1b-b18f-1a17f53fcc83" align="right" height="240" width="427" ></a>
+   * <a href="url"><img src="https://github.com/user-attachments/assets/88073326-d4c1-4e19-8b52-755fb7bbe581" align="right" height="240" width="427" ></a>
+
+
+
+
+
+
+   
 
 # References
    * https://projecthub.arduino.cc/Isaac100/getting-started-with-the-hc-sr04-ultrasonic-sensor-7cabe1
