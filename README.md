@@ -20,16 +20,17 @@
     
       * I plan to have 7 buttons, FORWARD, BACKWARDS, LEFT, RIGHT, CLEAR, PAUSE, GO, each movement command will get saved into an array with a max of about 30 commands, then when GO is pressed it will run each command in sequence performing each action after the other with a little wait in between actions, there will also be a beep when a button is pressed and 3 beeps for when the GO button is pressed if it has movement commands to execute, the CLEAR button will clear all saved movement commands from the array, and finally the PAUSE button will halt the NotBeeBot and wait till GO is pressed again to continue the rest of the sequence.
     
-      * Looking at both the rubber wheel and the marble ball as what I can use to hold my NotBeeBot up I decided that the marble ball would be the best option, my reasoning is that the rubber ball can pivot which way its rolling on the fly and has little to no friction, whereas the rubber wheel has to take time to pivot which way its rolling and depending on the direction that its facing it could cause a lot of friction and actually change how much the NotBeeBot rotates causing the path the bot takes to be way off.
+      * Looking at both the rubber wheel and the marble ball as what I can use to hold my NotBeeBot up I decided that the marble ball would be the best option, my reasoning is that the rubber ball can pivot which way it's rolling on the fly and has little to no friction, whereas the rubber wheel has to take time to pivot which way its rolling and depending on the direction that it's facing it could cause a lot of friction and actually change how much the NotBeeBot rotates causing the path the bot takes to be way off.
     
       * <a href="url"><img src="https://github.com/user-attachments/assets/22073cc8-5af2-40f5-afa6-304a6105c8e5" align="right" height="240" width="427" ></a>
       
     
    * ### Implementation
-      * When writing the code for the NotBeeBot I ran into an issue when trying to implement the pause function, due to the aduino's limitations when I was executing the saved commands in sequence it would wait for all the commands to end before allowing the loop function to run again, this meant that whilst the movement commands were running I couldnt check if any buttons were pressed, and trying to put the checks inside of the movement functions only allowed it to check after each delay in which I would move forward for 750ms so every 750ms it would only check once, the only way to solve this issue would be to use multithreading to allow both the loop function and the movement function to execute simultainously, however this task proved too difficult for me to even begin so I decided to completely wipe the pause function from the project.
+      * When writing the code for the NotBeeBot I ran into an issue when trying to implement the pause function, due to the Arduino's limitations when I was executing the saved commands in sequence it would wait for all the commands to end before allowing the loop function to run again, this meant that whilst the movement commands were running I couldn't check if any buttons were pressed, and trying to put the checks inside of the movement functions only allowed it to check after each delay in which I would move forward for 750ms so every 750ms it would only check once, the only way to solve this issue would be to use multithreading to allow both the loop function and the movement function to execute simultaneously, however, this task proved too difficult for me to even begin so I decided to completely wipe the pause function from the project.
         
    * ### Testing and Evaluation
-      * When testing my robot I found that a lot of the testing I was going to do would be adjusting the timing for the motors to run allowing for that 15cm measurement and as close to 90 degree turns as I can possibly achieve, however this came with an issue to do with battery life, as I used the robot more and more the battery drained 
+      * Here is a [Video](https://drive.google.com/file/d/1NErJ5e0zdEoMrJxAojWGWbAEdsFXxoad/view?usp=sharing) showing the controls getting stored inside 
+      * When testing my robot I found that a lot of the testing I was going to do would be adjusting the timing for the motors to run allowing for that 15cm measurement and as close to 90-degree turns as I can possibly achieve, however, this came with an issue to do with battery life, as I used the robot more and more the battery drained 
 
    * ### Iteration
 
@@ -39,7 +40,7 @@
    <a href="url"><img src="https://github.com/user-attachments/assets/6852a675-cffc-4f1b-b18f-1a17f53fcc83" align="right" height="240" width="427" ></a>
    <a href="url"><img src="https://github.com/user-attachments/assets/88073326-d4c1-4e19-8b52-755fb7bbe581" align="Center" height="240" width="427" ></a>
 
-   * Here is the Circuit diagram and the Wiring diagram as asked for in the assignment document. You can view them in [Tinkercad](https://www.tinkercad.com/things/fkpYd7mgALy-not-beebot-camerons/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=hNEtSJ4X27Qa3pH9DLSsrnlikMR4CaXaWMVf1GFJPlw) aswell.
+   * Here is the Circuit diagram and the Wiring diagram as asked for in the assignment document. You can view them in [Tinkercad](https://www.tinkercad.com/things/fkpYd7mgALy-not-beebot-camerons/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=hNEtSJ4X27Qa3pH9DLSsrnlikMR4CaXaWMVf1GFJPlw) as well.
 
 # References
    * https://projecthub.arduino.cc/Isaac100/getting-started-with-the-hc-sr04-ultrasonic-sensor-7cabe1
