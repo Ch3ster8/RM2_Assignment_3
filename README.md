@@ -4,8 +4,6 @@
         * [Planning](#Planning)
         * [Implementation](#Implementation)
         * [Testing](#Testing)
-        * [Evaluation](#Evaluation)
-        * [Iteration](#Iteration)
    * ## [Circuit/Wiring Diagrams](#Circuit/Wiring-Diagrams-1)
    * ## [References](#References-1)
 
@@ -39,14 +37,12 @@
     
       * After setting up all the wiring the same as the [Tinkercad](https://www.tinkercad.com/things/fkpYd7mgALy-not-beebot-camerons/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=hNEtSJ4X27Qa3pH9DLSsrnlikMR4CaXaWMVf1GFJPlw) version I had to mount it to a chassis, with this I worked with Kyan Erdeljack to help me with the design on [Fusion360](https://www.autodesk.com/au/products/fusion-360/overview?panel=buy&term=1-YEAR&tab=subscription&mktvar002=afc_au_nmpi_ppc&gclsrc=aw.ds&ds_rl=1232386&gad_source=1&affname=17945_&PID=17945&CID=&cfclick=c9bb1341d6bf4355a8cd8fcdd8b67f06) resulting in the [Final Version](bee-bot-template-v3.dxf) laser cut on a plywood piece, the trade-off was that I helped him with his code. This version allowed me to mount all the components comfortably with wiggle room on top of the chassis as well as access the on and off switch for the battery pack. This design was also very reliable and easy to use, mounting the motors was as simple as using little plastic T-pieces and putting a screw through the motor to connect it to the chassis.
     
-      * After setting up all the components the main issue I had was accessing the buttons to input commands, to fix this I used new [Pushbuttons](https://core-electronics.com.au/spst-black-push-off-mini-pushbutton-switch-47957.html) that allowed me to wire them away from the breadboard allowing me to add a control panel later on, at this current time I have this.
-        
-   * ### Testing and Evaluation
+      * After setting up all the components the main issue I had was accessing the buttons to input commands, to fix this I used new [Pushbuttons](https://core-electronics.com.au/spst-black-push-off-mini-pushbutton-switch-47957.html) that allowed me to wire them away from the breadboard allowing me to add a control panel later on, at this current time I have [this](https://drive.google.com/file/d/1PZJ4p8Wys7UYKFC18_vLBE45zORheZQY/view?usp=sharing).
+
+  <a name="Testing"></a>
+   * ### Testing, Evaluation and Iteration
       * Here is a [Video](https://drive.google.com/file/d/1NErJ5e0zdEoMrJxAojWGWbAEdsFXxoad/view?usp=sharing) showing the controls getting stored inside 
-      * When testing my robot I found that a lot of the testing I was going to do would be adjusting the timing for the motors to run allowing for that 15cm measurement and as close to 90-degree turns as I can possibly achieve, however, this came with an issue to do with battery life, as I used the robot more and more the battery drained 
-
-   * ### Iteration
-
+      * When testing my robot I found that a lot of the testing I was going to do would be adjusting the timing for the motors to run allowing for that 15cm measurement and as close to 90-degree turns as I can possibly achieve, however, this came with an issue to do with battery life, as I used the robot more and more the battery drained resulting in varying results over time, however I did manage to get a new [Video](https://drive.google.com/file/d/1PXSoWEhVbEcgQeFNJhaXFlGjpG9dIE24/view?usp=sharing) showcasing the NotBeeBot with wheels and an Ultrasonic Distance Sensor all working as intended.
 
 <a name="Circuit/Wiring-Diagrams"></a>
 # Circuit/Wiring Diagrams
@@ -61,7 +57,8 @@
    * ### All Links:
    * [Code](NotBeeBotCode.txt)
    * [Tinkercad](https://www.tinkercad.com/things/fkpYd7mgALy-not-beebot-camerons/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=hNEtSJ4X27Qa3pH9DLSsrnlikMR4CaXaWMVf1GFJPlw)
-   * [Video-1](https://drive.google.com/file/d/1NErJ5e0zdEoMrJxAojWGWbAEdsFXxoad/view?usp=sharing)
+   * [Video](https://drive.google.com/file/d/1NErJ5e0zdEoMrJxAojWGWbAEdsFXxoad/view?usp=sharing)
+   * [Main-Video](https://drive.google.com/file/d/1PXSoWEhVbEcgQeFNJhaXFlGjpG9dIE24/view?usp=sharing)
 
 
 
