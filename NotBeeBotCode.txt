@@ -185,7 +185,7 @@ void MoveForwards() {
   digitalWrite(motor_pin_3, HIGH);
   digitalWrite(motor_pin_4, LOW);
   EnableMotors();
-  delay(1000);  // Move for 1 second
+  delay(800);  // Move for 1 second
   DisableMotors();
 }
 
@@ -196,7 +196,7 @@ void MoveBackwards() {
   digitalWrite(motor_pin_3, LOW);
   digitalWrite(motor_pin_4, HIGH);
   EnableMotors();
-  delay(1000); // Move for 1 second
+  delay(800); // Move for 1 second
   DisableMotors();
 }
 
@@ -207,7 +207,7 @@ void TurnLeft() {
   digitalWrite(motor_pin_3, HIGH);
   digitalWrite(motor_pin_4, LOW);
   EnableMotors();
-  delay(500);  // Turn for 0.5 seconds
+  delay(650);  // Turn for 0.5 seconds
   DisableMotors();
 }
 
@@ -218,7 +218,7 @@ void TurnRight() {
   digitalWrite(motor_pin_3, LOW);
   digitalWrite(motor_pin_4, HIGH);
   EnableMotors();
-  delay(500); // Turn for 0.5 seconds
+  delay(650); // Turn for 0.5 seconds
   DisableMotors();
 }
 
