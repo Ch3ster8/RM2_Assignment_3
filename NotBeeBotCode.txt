@@ -1,7 +1,7 @@
 const int forward_button = 8;
 const int backward_button = 9;
-const int left_button = 10;
-const int right_button = 11;
+const int left_button = 11;
+const int right_button = 10;
 const int go_button = 12;
 const int clear_button = 13;
 
