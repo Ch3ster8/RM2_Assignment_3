@@ -4,6 +4,7 @@
         * [Planning](#Planning)
         * [Implementation](#Implementation)
         * [Testing](#Testing)
+        * [Testing](#Conclusion)
    * ## [Circuit/Wiring Diagrams](#Circuit/Wiring-Diagrams-1)
    * ## [References](#References-1)
 
@@ -39,7 +40,7 @@
       <a href="url"><img src="https://github.com/user-attachments/assets/75451d28-659a-4420-b319-9cd94a9e8947" align="right" height=20% width=30% ></a>
       * After setting up all the wiring the same as the [Tinkercad](https://www.tinkercad.com/things/fkpYd7mgALy-not-beebot-camerons/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits&sharecode=hNEtSJ4X27Qa3pH9DLSsrnlikMR4CaXaWMVf1GFJPlw) version I had to mount it to a chassis, with this I worked with Kyan Erdeljack to help me with the design on [Fusion360](https://www.autodesk.com/au/products/fusion-360/overview?panel=buy&term=1-YEAR&tab=subscription&mktvar002=afc_au_nmpi_ppc&gclsrc=aw.ds&ds_rl=1232386&gad_source=1&affname=17945_&PID=17945&CID=&cfclick=c9bb1341d6bf4355a8cd8fcdd8b67f06) resulting in the [Final Version](bee-bot-template-v3.dxf) laser cut on a plywood piece, the trade-off was that I helped him with his code. This version allowed me to mount all the components comfortably with wiggle room on top of the chassis as well as access the on and off switch for the battery pack. This design was also very reliable and easy to use, mounting the motors was as simple as using little plastic T-pieces and putting a screw through the motor to connect it to the chassis.
     
-      * After setting up all the components the main issue I had was accessing the buttons to input commands, to fix this I used new [Pushbuttons](https://core-electronics.com.au/spst-black-push-off-mini-pushbutton-switch-47957.html) that allowed me to wire them away from the breadboard allowing me to add a control panel later on, at this current time I have [this](https://drive.google.com/file/d/1PZJ4p8Wys7UYKFC18_vLBE45zORheZQY/view?usp=sharing) which is also the image on the right, there is no cover due to my lack of knowledge on laser cutting making the design not exactly suitable for kids which is unfortunate and definetely a fault on my part in terms of time management aswell.
+      * After setting up all the components the main issue I had was accessing the buttons to input commands, to fix this I used new [Pushbuttons](https://core-electronics.com.au/spst-black-push-off-mini-pushbutton-switch-47957.html) that allowed me to wire them away from the breadboard allowing me to add a control panel later on, at this current time I have [this](https://drive.google.com/file/d/1PZJ4p8Wys7UYKFC18_vLBE45zORheZQY/view?usp=sharing) which is also the image on the right, there is no cover due to my lack of knowledge on laser cutting resulting in the design being not exactly suitable for kids which is unfortunate and definetely a fault on my part in terms of time management aswell.
 
 
   <a name="Testing"></a>
@@ -49,6 +50,16 @@
       * When testing my robot I found that a lot of the testing I was going to do would be adjusting the timing for the motors to run allowing for that 15cm measurement and as close to 90-degree turns as I can possibly achieve, however, this came with an issue to do with battery life, as I used the robot more and more the battery drained resulting in varying results over time.
         
       * Despite battery issues I did manage to get a new [Video](https://drive.google.com/file/d/1PXSoWEhVbEcgQeFNJhaXFlGjpG9dIE24/view?usp=sharing) showcasing the NotBeeBot with wheels and an Ultrasonic Distance Sensor all working as intended and also showcasing that the NotBeeBot stops executing commands when faced with an object within 15cm of the Sensor. I did add a couple cardboard cutouts, one for the control panel and one for the Ultrasonic Distance Sensor to sit on the front, I also drew a little smiley face on the front to make it more suitable to kids bringing my NotBeeBot close to the NotBeeBot Plus however the cover isn't exactly suitable.
+
+  <a name="Conclusion"></a>
+   * ### Conclusion / Reflection
+      * In conclusion I think the final result definetely could have been more suitable for use, due to the lack of the cover the project doesn't feel complete and also is less reliable as tampering with the wiring would be very easy. The NotBeeBot Plus specifies that the project should be appealing the primary school students and whilst the project would be appealing it is for all the wrong reasons, kids would want to play with the wires and eat them for example, this is not safe and wouldnt be suitable to teach kids how to learn sequences.
+    
+      * Despite the cover, the functionality of the project is highly advanced cohering to the specifications of the NotBeeBot plus perfectly, the code is also well designed making use of features to increase reliability in the circuitry, an example of this is using "INPUT_PULLUP" instead of regular "INPUT" when declaring a pin, this removes the need for a resistor in the physical circuit due to the code looking for a higher current before declaring that the pin is either "1" or "0", this means that the trickle of ground that comes through due to lack of resistance is ignored in the code.
+    
+      * The code also uses "Else if" statements to remove unnecesary checks and uses an Arduino specific feature of "Switch" and "Case" essentially removing the need for an if statement for each key in an element, and lowering the ammount of writing required for the coder, it is also more efficient for the hardware to read.
+    
+      * Overall the project meets the NotBeeBot Plus standard and can be used reliably to navigate on a carpet environment, the project is also intuitive and requires no tutorial for usage, simply switch the battery pack on and input the commands.
 
 <a name="Circuit/Wiring-Diagrams"></a>
 # Circuit/Wiring Diagrams
